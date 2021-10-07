@@ -38,7 +38,7 @@ const validateScheme = (req, res, next) => {
       typeof scheme_name !== 'string' ||
       !scheme_name.trim()
       ) {
-        next( { status: 400, message: 'invalid scheme name'})
+        next({ status: 400, message: 'invalid scheme_name'})
       } else {
         next()
       }
@@ -55,6 +55,7 @@ const validateScheme = (req, res, next) => {
 */
 const validateStep = (req, res, next) => {
   const { instructions, step_number } = req.body
+  
   if ( instructions === undefined ||
     typeof instructions !== 'string' ||
     !instructions.trim() || 
